@@ -1,4 +1,3 @@
-#/etc/profile.d/terminal_setup.sh
 # Set xterm as terminal enviroment
 TERM=xterm
 
