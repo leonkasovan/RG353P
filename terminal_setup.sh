@@ -1,6 +1,6 @@
 #/etc/profile.d/terminal_setup.sh
-# Set vt100 as terminal enviroment
-TERM=vt100
+# Set xterm as terminal enviroment
+TERM=xterm
 
 # Add ANBERNIC logo and some alias, sourcing of $HOME/.bashrc can be added to $HOME/.profile
 echo '
@@ -14,8 +14,7 @@ echo '
                    RK3566
 '
 echo
-echo "-- type 'anbernic-check-updates' to check for stable branch --"
-echo "-- add 'beta' switch to check for latest arch developments  --"
+echo "-- type 'anbernic-save-overlay' to save system files --"
 echo
 anbernic-info 2>/dev/null
 echo "OS version: $(cat /usr/share/anbernic/anbernic.version)"
@@ -24,3 +23,4 @@ echo
 # ---- ALIAS VALUES ----
 alias mc='mc -x'
 alias anbernic-check-updates='anbernic-es-swissknife --update
+alias ls='ls -l'
