@@ -15,7 +15,11 @@ EOF
 
 cat > /etc/profile.d/terminal_setup.sh <<EOF
 # Set xterm as terminal enviroment
-TERM=xterm
+if [ "$(tty)" = "/dev/tty3" ]; then
+TERM=linux  #login from device
+else
+TERM=xterm  #login via ssh
+fi
 
 # Add ANBERNIC logo and some alias, sourcing of $HOME/.bashrc can be added to $HOME/.profile
 echo '
