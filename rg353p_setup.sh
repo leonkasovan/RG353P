@@ -1,4 +1,5 @@
 cat > /etc/pacman.conf <<EOF
+[options]
 RootDir           = /
 DBPath            = /userdata/system/pacman/db/
 CacheDir          = /userdata/system/pacman/pkg/
