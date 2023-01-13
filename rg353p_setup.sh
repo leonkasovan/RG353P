@@ -15,7 +15,7 @@ EOF
 
 cat > /etc/profile.d/terminal_setup.sh <<EOF
 # Set xterm as terminal enviroment
-if [ "$(tty)" = "/dev/tty3" ]; then
+if [ "\$(tty)" = "/dev/tty3" ]; then
 TERM=linux  #login from device
 else
 TERM=xterm  #login via ssh
