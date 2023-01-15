@@ -59,5 +59,5 @@ BTN_MODE+BTN_THUMBL    1   /etc/init.d/S31emulationstation stop
 BTN_MODE+BTN_THUMBR    1   /etc/init.d/S31emulationstation start
 EOF
 cp /etc/triggerhappy/triggers.d/multimedia_keys.conf /etc/triggerhappy/triggers.d/multimedia_keys_disabled.conf
-anbernic-save-overlay
+anbernic-save-overlay 100
 reboot
