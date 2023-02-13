@@ -10,6 +10,9 @@ SigLevel = Never
 CheckSpace
 DisableDownloadTimeout
 
+[anbernic]
+Server            = https://store.batocera.org/
+
 Include           = /userdata/system/pacman/pacman.conf
 EOF
 
