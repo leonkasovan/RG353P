@@ -1,5 +1,8 @@
 /etc/init.d/S31emulationstation stop
 anbernic-settings-set system.es.custom 1
+anbernic-settings-set rom_downloader.db.path /userdata/roms/bin/emulationstation/
+anbernic-settings-set port_downloader.db.path /userdata/roms/bin/emulationstation/portmaster.db
+anbernic-settings-set rom_downloader.last_search_name prince
 cd
 ln -s anbernic.conf batocera.conf 
 cd /usr/bin
@@ -56,8 +59,22 @@ if [ ! -f "/userdata/roms/bin/emulationstation" ]; then
   wget --show-progress -O emulationstation.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.zip
   unzip emulationstation.zip
 fi
-
 wget -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
+
+if [ ! -d "/userdata/roms/bin/emulationstation/" ]; then
+  mkdir -p /userdata/roms/bin/emulationstation/
+fi
+
+shopt -s nullglob
+csv_files=(/userdata/roms/bin/emulationstation/*.csv)
+if [ ${#csv_files[@]} -gt 0 ]; then
+  echo "CSV files exist in the directory."
+else
+  cd /userdata/roms/bin/emulationstation/
+  echo "Downloading roms downloader database..."
+  wget -O rom.db.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/rom.db.zip
+  unzip rom.db.zip
+fi
 
 anbernic-save-overlay 100
 #anbernic-poweroff
