@@ -72,8 +72,9 @@ if [ ${#csv_files[@]} -gt 0 ]; then
 else
   cd /userdata/roms/bin/emulationstation/
   echo "Downloading roms downloader database..."
-  wget -O rom.db.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/rom.db.zip
-  unzip rom.db.zip
+  wget -O rom.db.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/db.zip
+  unzip db.zip
+  ln -s portmaster.db /userdata/system/portmaster.db  #temp, it should change in ES code.
 fi
 
 anbernic-save-overlay 100
