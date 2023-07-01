@@ -81,4 +81,4 @@ wget -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonka
 
 anbernic-save-overlay 100
 #anbernic-poweroff
-reboot
+#reboot
