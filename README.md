@@ -9,5 +9,5 @@ Press `START` -> `MAIN MENU` -> `NETWORK SETTINGS`
 `WIFI KEY` : change to `Genteng2202`  
 
 Open ssh IP ADDRESS (192.168.1.X) and execute this command:  
-`wget https://raw.githubusercontent.com/leonkasovan/RG353P/main/rg353p_setup.sh -O - | /bin/bash`
+`wget https://raw.githubusercontent.com/leonkasovan/RG353P/main/rg353p_setup.sh -O - | /bin/bash`  
 `wget https://raw.githubusercontent.com/leonkasovan/RG353P/main/rg353p_setup_batocera_es.sh -O - | /bin/bash`
