@@ -54,9 +54,9 @@ ln -s	anbernic-wifi	batocera-wifi
 ln -s	anbernic-x360box	batocera-x360box
 ln -s	anbernic-x360box.sh	batocera-x360box.sh
 
-if [ ! -d "/userdata/roms/bin/emulationstation/" ]; then
-  mkdir -p /userdata/roms/bin/emulationstation/
-fi
+#if [ ! -d "/userdata/roms/bin/emulationstation/" ]; then
+  mkdir -p /userdata/roms/bin/emulationstation
+#fi
 
 #shopt -s nullglob
 #csv_files=(/userdata/roms/bin/emulationstation/*.csv)
