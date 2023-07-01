@@ -67,7 +67,7 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
   echo "Downloading roms downloader database..."
   wget -O db.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/db.zip
   unzip -o db.zip
-  ln -s portmaster.db /userdata/system/portmaster.db  #temp, it should change in ES code.
+  #ln -s portmaster.db /userdata/system/portmaster.db  #temp, it should change in ES code.
 #fi
 
 #if [ ! -f "/userdata/roms/bin/emulationstation" ]; then
