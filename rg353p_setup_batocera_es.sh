@@ -1,7 +1,7 @@
 /etc/init.d/S31emulationstation stop
 anbernic-settings-set system.es.custom 1
-anbernic-settings-set rom_downloader.db.path /userdata/roms/bin/emulationstation/
-anbernic-settings-set port_downloader.db.path /userdata/roms/bin/emulationstation/portmaster.db
+anbernic-settings-set rom_downloader.db.path /userdata/roms/bin/es/
+anbernic-settings-set port_downloader.db.path /userdata/roms/bin/es/portmaster.db
 anbernic-settings-set rom_downloader.last_search_name prince
 cd
 ln -s anbernic.conf batocera.conf 
@@ -54,16 +54,16 @@ ln -s	anbernic-wifi	batocera-wifi
 ln -s	anbernic-x360box	batocera-x360box
 ln -s	anbernic-x360box.sh	batocera-x360box.sh
 
-#if [ ! -d "/userdata/roms/bin/emulationstation/" ]; then
-  mkdir -p /userdata/roms/bin/emulationstation
+#if [ ! -d "/userdata/roms/bin/es" ]; then
+  mkdir -p /userdata/roms/bin/es
 #fi
 
 #shopt -s nullglob
-#csv_files=(/userdata/roms/bin/emulationstation/*.csv)
+#csv_files=(/userdata/roms/bin/es/*.csv)
 #if [ ${#csv_files[@]} -gt 0 ]; then
 #  echo "CSV files exist in the directory."
 #else
-  cd /userdata/roms/bin/emulationstation/
+  cd /userdata/roms/bin/es/
   echo "Downloading roms downloader database..."
   wget -O db.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/db.zip
   unzip -o db.zip
