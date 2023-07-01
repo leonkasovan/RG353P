@@ -125,3 +125,4 @@ exit $?
 EOF
 
 anbernic-save-overlay 100
+reboot
