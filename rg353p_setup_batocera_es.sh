@@ -54,28 +54,28 @@ ln -s	anbernic-wifi	batocera-wifi
 ln -s	anbernic-x360box	batocera-x360box
 ln -s	anbernic-x360box.sh	batocera-x360box.sh
 
-if [ ! -f "/userdata/roms/bin/emulationstation" ]; then
-  cd /userdata/roms/bin/
-  wget --show-progress -O emulationstation.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.zip
-  unzip emulationstation.zip
-fi
-wget -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
-
 if [ ! -d "/userdata/roms/bin/emulationstation/" ]; then
   mkdir -p /userdata/roms/bin/emulationstation/
 fi
 
-shopt -s nullglob
-csv_files=(/userdata/roms/bin/emulationstation/*.csv)
-if [ ${#csv_files[@]} -gt 0 ]; then
-  echo "CSV files exist in the directory."
-else
+#shopt -s nullglob
+#csv_files=(/userdata/roms/bin/emulationstation/*.csv)
+#if [ ${#csv_files[@]} -gt 0 ]; then
+#  echo "CSV files exist in the directory."
+#else
   cd /userdata/roms/bin/emulationstation/
   echo "Downloading roms downloader database..."
   wget -O db.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/db.zip
-  unzip db.zip
+  unzip -o db.zip
   ln -s portmaster.db /userdata/system/portmaster.db  #temp, it should change in ES code.
-fi
+#fi
+
+#if [ ! -f "/userdata/roms/bin/emulationstation" ]; then
+  cd /userdata/roms/bin/
+  wget --show-progress -O emulationstation.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.zip
+  unzip -o emulationstation.zip
+#fi
+wget -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
 
 anbernic-save-overlay 100
 #anbernic-poweroff
