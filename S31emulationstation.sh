@@ -29,7 +29,6 @@ case "$1" in
 			test -n "${display_rotate}" && EXTRA_OPTS="--screenrotate ${display_rotate}"
 
 			cd /userdata # es need a PWD
-			HOME=/userdata/system LANG="${settings_lang}.UTF-8" SDL_NOMOUSE=1 /usr/bin/emulationstation --no-splash ${EXTRA_OPTS} &
 			if [ "$custom_es" != "0" ];then
 				HOME=/userdata/system LANG="${settings_lang}.UTF-8" SDL_NOMOUSE=1 /userdata/roms/bin/emulationstation --no-splash ${EXTRA_OPTS} &
 			else
