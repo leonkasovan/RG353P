@@ -35,6 +35,7 @@ echo '
 '
 echo
 echo "-- type 'anbernic-save-overlay' to save system files --"
+echo "-- type 'anbernic-settings-set system.es.custom 0' to launch default emulationstation at boot 
 echo
 anbernic-info 2>/dev/null
 echo "OS version: $(cat /usr/share/anbernic/anbernic.version)"
