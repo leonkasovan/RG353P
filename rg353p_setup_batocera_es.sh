@@ -72,9 +72,10 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
 
 #if [ ! -f "/userdata/roms/bin/emulationstation" ]; then
   cd /userdata/roms/bin/
-  wget --show-progress -O emulationstation.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.7z
-  #unzip -o emulationstation.zip
+  wget --show-progress -O emulationstation.7z https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.7z
   7zr x -y emulationstation.7z
+  wget --show-progress -O emulationstation.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.zip
+  #unzip -o emulationstation.zip
 #fi
 wget -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
 
