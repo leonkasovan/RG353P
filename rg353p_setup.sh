@@ -1,3 +1,5 @@
+cd /userdata/system/pacman/db/sync
+ln -s anbernic.db batocera.db
 cat > /etc/pacman.conf <<EOF
 [options]
 RootDir           = /
