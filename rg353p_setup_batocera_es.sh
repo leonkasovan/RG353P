@@ -67,7 +67,7 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
 #else
   cd /userdata/roms/bin/es/
   echo "Downloading roms downloader database..."
-  wget -O db.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/db.zip
+  wget -N -O db.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/db.zip
   unzip -o db.zip
 #fi
 
@@ -88,7 +88,7 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
   mv magic.mgc /usr/share/misc/magic.mgc
   rm FileManager.7z
 #fi
-wget -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
+wget -N -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
 
 anbernic-save-overlay 100
 #anbernic-poweroff
