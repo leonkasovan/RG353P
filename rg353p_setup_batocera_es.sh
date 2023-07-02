@@ -164,4 +164,4 @@ cp /etc/triggerhappy/triggers.d/multimedia_keys.conf /etc/triggerhappy/triggers.
 
 anbernic-save-overlay 100
 #anbernic-poweroff
-#reboot
+reboot
