@@ -61,6 +61,7 @@ SW_HEADPHONE_INSERT 1           [[ "$(cat /sys/class/drm/card0-HDMI-A-1/status)"
 SW_HEADPHONE_INSERT 0           [[ "$(cat /sys/class/drm/card0-HDMI-A-1/status)" != "connected" ]] && [[ "$(cat /sys/bus/platform/devices/singleadc-joypad/hw_info)" == "2" ]] && anbernic-audio set SPK
 BTN_MODE+BTN_THUMBL    1   /etc/init.d/S31emulationstation stop
 BTN_MODE+BTN_THUMBR    1   /etc/init.d/S31emulationstation start
+BTN_MODE+BTN_WEST    1   anbernic-screenshot
 EOF
 cp /etc/triggerhappy/triggers.d/multimedia_keys.conf /etc/triggerhappy/triggers.d/multimedia_keys_disabled.conf
 anbernic-save-overlay 100
