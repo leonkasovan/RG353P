@@ -4,6 +4,7 @@ anbernic-settings-set rom_downloader.db.path /userdata/roms/bin/es/
 anbernic-settings-set port_downloader.db.path /userdata/roms/bin/es/portmaster.db
 anbernic-settings-set rom_downloader.last_search_name prince
 anbernic-settings-set run.external.path /userdata/roms/bin/
+anbernic-settings-set run.filemanager.path /userdata/roms/bin/EnhancedFileManager
 cd
 ln -s anbernic.conf batocera.conf 
 cd /usr/bin
@@ -68,15 +69,16 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
   echo "Downloading roms downloader database..."
   wget -O db.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/db.zip
   unzip -o db.zip
-  #ln -s portmaster.db /userdata/system/portmaster.db  #temp, it should change in ES code.
 #fi
 
 #if [ ! -f "/userdata/roms/bin/emulationstation" ]; then
   cd /userdata/roms/bin/
-  wget --show-progress -O emulationstation.7z https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.7z
+  wget --show-progress https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.7z
   7zr x -y -sdel emulationstation.7z
-  #wget --show-progress -O emulationstation.zip https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.zip
+  #wget --show-progress https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.zip
   #unzip -o emulationstation.zip
+  wget --show-progress https://github.com/leonkasovan/351Files/releases/download/v202307/FileManager.7z
+  7zr x -y -sdel FileManager.7z
 #fi
 wget -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
 
