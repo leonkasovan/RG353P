@@ -90,7 +90,9 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
 #fi
 wget -N -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
 wget -N -O /usr/bin/anbernic-es-theme https://raw.githubusercontent.com/leonkasovan/RG353P/main/anbernic-es-theme
+wget -N -O /usr/bin/anbernic-es-thebezelproject https://raw.githubusercontent.com/leonkasovan/RG353P/main/anbernic-es-thebezelproject
 chmod a+x /usr/bin/anbernic-es-theme
+chmod a+x /usr/bin/anbernic-es-thebezelproject
 cd /userdata/system/pacman/db/sync
 ln -s anbernic.db batocera.db
 cat > /etc/pacman.conf <<EOF
