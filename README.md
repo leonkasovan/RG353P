@@ -10,4 +10,8 @@ Press `START` -> `MAIN MENU` -> `NETWORK SETTINGS`
 
 Open ssh IP ADDRESS (192.168.1.X) and execute this command:  
 `wget https://raw.githubusercontent.com/leonkasovan/RG353P/main/rg353p_setup.sh -O - | /bin/bash`  
-`wget https://raw.githubusercontent.com/leonkasovan/RG353P/main/rg353p_setup_batocera_es.sh -O - | /bin/bash`
+`wget https://raw.githubusercontent.com/leonkasovan/RG353P/main/rg353p_setup_batocera_es.sh -O - | /bin/bash`  
+
+## Apps for RG353P
+Mini File Manager (Enhanced) : https://github.com/leonkasovan/351Files  
+Custom Emulation Station : https://github.com/leonkasovan/batocera-emulationstation
