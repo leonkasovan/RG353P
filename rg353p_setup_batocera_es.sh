@@ -80,6 +80,12 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
   #unzip -o emulationstation.zip
   wget --show-progress -N https://github.com/leonkasovan/351Files/releases/download/v202307/FileManager.7z
   7zr x -y FileManager.7z
+  mv magic /etc/magic
+  mv magic.mime /etc/magic.mime
+  mv file /usr/bin/file
+  mv libmagic.so.1 /usr/lib/libmagic.so.1
+  mkdir -p /usr/share/misc/
+  mv magic.mgc /usr/share/misc/magic.mgc
   rm FileManager.7z
 #fi
 wget -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
