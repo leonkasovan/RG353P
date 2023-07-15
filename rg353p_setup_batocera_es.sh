@@ -2,6 +2,7 @@
 anbernic-settings-set system.es.custom 1
 anbernic-settings-set rom_downloader.db.path /userdata/roms/bin/es/
 anbernic-settings-set port_downloader.db.path /userdata/roms/bin/es/portmaster.db
+anbernic-settings-set port_downloader.new.db.path /userdata/roms/bin/es/new-portmaster.db
 anbernic-settings-set rom_downloader.last_search_name prince
 anbernic-settings-set run.external.path /userdata/roms/bin/
 anbernic-settings-set run.filemanager.path /userdata/roms/bin/EnhancedFileManager
