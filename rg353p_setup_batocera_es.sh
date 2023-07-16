@@ -106,12 +106,14 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
   rm file.7z
 
 #fi
+wget -N -O /userdata/system/scripts/screenshot_auto_scrapper.sh https://raw.githubusercontent.com/leonkasovan/batocera-emulationstation/master/screenshot_auto_scrapper.sh
 wget -N -O /userdata/roms/bin/es/gen_db_from_port_master.lua https://raw.githubusercontent.com/leonkasovan/batocera-emulationstation/master/gen_db_from_port_master.lua
 wget -N -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
 wget -N -O /usr/bin/anbernic-es-theme https://raw.githubusercontent.com/leonkasovan/RG353P/main/anbernic-es-theme
 wget -N -O /usr/bin/anbernic-es-thebezelproject https://raw.githubusercontent.com/leonkasovan/RG353P/main/anbernic-es-thebezelproject
 chmod a+x /usr/bin/anbernic-es-theme
 chmod a+x /usr/bin/anbernic-es-thebezelproject
+chmod a+x /userdata/system/scripts/screenshot_auto_scrapper.sh
 cd /userdata/system/pacman/db/sync
 ln -s anbernic.db batocera.db
 cat > /etc/pacman.conf <<EOF
