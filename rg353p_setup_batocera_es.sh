@@ -77,8 +77,13 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
   wget --show-progress -N https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.7z
   7zr x -y emulationstation.7z
   rm emulationstation.7z
-  #wget --show-progress https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.zip
-  #unzip -o emulationstation.zip
+  wget --show-progress https://github.com/leonkasovan/luaxx/releases/download/v5.1.5.80/luaxx-linux-arm64.7z
+  7zr x -y luaxx-linux-arm64.7z
+  rm luaxx-linux-arm64.7z
+  if [ -f "/usr/bin/luaxx" ]; then
+    rm /usr/bin/luaxx
+  fi
+  ln -sf /userdata/roms/bin/luaxx /usr/bin/luaxx
   wget --show-progress -N https://github.com/leonkasovan/351Files/releases/download/v202307/FileManager.7z
   7zr x -y FileManager.7z
   mv magic /etc/magic
@@ -89,6 +94,7 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
   mv magic.mgc /usr/share/misc/magic.mgc
   rm FileManager.7z
 #fi
+wget -N -O /userdata/roms/bin/es/gen_db_from_port_master.lua https://raw.githubusercontent.com/leonkasovan/batocera-emulationstation/master/gen_db_from_port_master.lua
 wget -N -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
 wget -N -O /usr/bin/anbernic-es-theme https://raw.githubusercontent.com/leonkasovan/RG353P/main/anbernic-es-theme
 wget -N -O /usr/bin/anbernic-es-thebezelproject https://raw.githubusercontent.com/leonkasovan/RG353P/main/anbernic-es-thebezelproject
@@ -159,7 +165,7 @@ SW_HEADPHONE_INSERT 1           [[ "$(cat /sys/class/drm/card0-HDMI-A-1/status)"
 SW_HEADPHONE_INSERT 0           [[ "$(cat /sys/class/drm/card0-HDMI-A-1/status)" != "connected" ]] && [[ "$(cat /sys/bus/platform/devices/singleadc-joypad/hw_info)" == "2" ]] && anbernic-audio set SPK
 BTN_MODE+BTN_THUMBL    1   /etc/init.d/S31emulationstation stop
 BTN_MODE+BTN_THUMBR    1   /etc/init.d/S31emulationstation start
-BTN_MODE+BTN_WEST    1   anbernic-screenshot
+BTN_MODE+KEY_POWER    1   anbernic-screenshot
 EOF
 cp /etc/triggerhappy/triggers.d/multimedia_keys.conf /etc/triggerhappy/triggers.d/multimedia_keys_disabled.conf
 
