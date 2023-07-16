@@ -79,6 +79,8 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
   wget --show-progress -N https://github.com/leonkasovan/batocera-emulationstation/releases/download/v202307/emulationstation.7z
   7zr x -y emulationstation.7z
   rm emulationstation.7z
+
+  # Install luaxx
   wget --show-progress https://github.com/leonkasovan/luaxx/releases/download/v5.1.5.80/luaxx-linux-arm64.7z
   7zr x -y luaxx-linux-arm64.7z
   rm luaxx-linux-arm64.7z
@@ -86,15 +88,23 @@ ln -s	anbernic-x360box.sh	batocera-x360box.sh
     rm /usr/bin/luaxx
   fi
   ln -sf /userdata/roms/bin/luaxx /usr/bin/luaxx
+
+  # Install Enhanced File Manager
   wget --show-progress -N https://github.com/leonkasovan/351Files/releases/download/v202307/FileManager.7z
   7zr x -y FileManager.7z
+  rm FileManager.7z
+
+  # Install File
+  wget --show-progress -N https://github.com/leonkasovan/351Files/releases/download/v202307/file.7z
+  7zr x -y file.7z
   mv magic /etc/magic
   mv magic.mime /etc/magic.mime
   mv file /usr/bin/file
   mv libmagic.so.1 /usr/lib/libmagic.so.1
   mkdir -p /usr/share/misc/
   mv magic.mgc /usr/share/misc/magic.mgc
-  rm FileManager.7z
+  rm file.7z
+
 #fi
 wget -N -O /userdata/roms/bin/es/gen_db_from_port_master.lua https://raw.githubusercontent.com/leonkasovan/batocera-emulationstation/master/gen_db_from_port_master.lua
 wget -N -O /etc/init.d/S31emulationstation https://raw.githubusercontent.com/leonkasovan/RG353P/main/S31emulationstation.sh
