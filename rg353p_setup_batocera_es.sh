@@ -7,7 +7,9 @@ anbernic-settings-set rom_downloader.last_search_name prince
 anbernic-settings-set run.external.path /userdata/roms/bin/
 anbernic-settings-set run.filemanager.path /userdata/roms/bin/EnhancedFileManager
 cd
-ln -s anbernic.conf batocera.conf 
+ln -s anbernic.conf batocera.conf
+cd /usr/share
+ln -s anbernic batocera
 cd /usr/bin
 ln -s	anbernic-audio	batocera-audio
 ln -s	anbernic-autologin	batocera-autologin
