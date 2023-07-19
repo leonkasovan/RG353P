@@ -2,9 +2,9 @@
 Knowledge for Handheld Device RG353P
 
 CPU / Architecture: Rockchip RK3566 (ARM), same as Anbernic RG353P/M/V/VS, RG503, and Powkiddy RK2023, x55  
-Kernel: Rockchip BSP 4.19
-GL driver: Mali
-Interface: KMS/DRM + EmulationStation
+Kernel: Rockchip BSP 4.19  
+GL driver: Mali  
+Interface: KMS/DRM + EmulationStation  
 
 OS:
 1. Stock OS (Batocera rip): https://win.anbernic.com/download/233.html  
