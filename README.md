@@ -1,6 +1,8 @@
 # RG353P
 Knowledge for Handheld Device RG353P
 
+Using Chipset: RK3566 (Same as Anbernic RG353P/M/V/VS, RG503, and Powkiddy RK2023)  
+
 Set device for the first time:  
 
 Press `START` -> `MAIN MENU` -> `NETWORK SETTINGS`  
