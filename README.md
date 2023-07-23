@@ -11,6 +11,9 @@ OS:
 2. JELOS: https://github.com/JustEnoughLinuxOS/distribution
 3. Ark OS: https://github.com/christianhaitian/arkos/wiki  
 
+Full BIOS for Batocera 37:  
+http://theminicaketv.free.fr/bios.html  
+
 Set device for the first time:  
 
 Press `START` -> `MAIN MENU` -> `NETWORK SETTINGS`  
