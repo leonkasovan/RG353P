@@ -13,6 +13,7 @@ OS:
 
 Full BIOS for Batocera 37:  
 http://theminicaketv.free.fr/bios.html  
+https://github.com/Abdess/retroarch_system  
 
 Set device for the first time:  
 
