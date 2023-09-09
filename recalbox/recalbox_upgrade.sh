@@ -6,19 +6,34 @@
 # 5. Enable / Disable splash screen
 # 6. Add log viewer
 # 7. Simplify menu
+# 8. 100% BIOS setup
 
-es stop
-sleep 3
 mount -o remount,rw /
-sleep 1
 
-if [ ! -f "/recalbox/share/system/emulationstation" ]; then
-  wget https://somewhere.com/emulationstation.7z
-  7zr x -y emulationstation.7z
-  rm emulationstation.7z
+# Update BIOS
+if [ -f "/recalbox/share/system/bios-recalbox-9.1.7z" ]; then
+	echo "Updating BIOS ..."
+	7zr x -aoa -o/recalbox/share /recalbox/share/system/bios-recalbox-9.1.7z
+	rm /recalbox/share/system/bios-recalbox-9.1.7z
 fi
-mv emulationstation /usr/bin/emulationstation
-chmod a+x /usr/bin/emulationstation
 
-sleep 1
-es start
+# Upgrade EmulationStation
+if [ -f "/recalbox/share/system/emulationstation.7z" ]; then
+	echo "Upgrading EmulationStation ..."
+	es stop
+	sleep 3
+	7zr x -aoa -o/usr/bin /recalbox/share/system/emulationstation.7z
+	rm /recalbox/share/system/emulationstation.7z
+	chmod a+x /usr/bin/emulationstation
+	sleep 1
+	es start
+fi
+if [ -f "/recalbox/share/system/emulationstation" ]; then
+	echo "Upgrading EmulationStation ..."
+	es stop
+	sleep 3
+	mv /recalbox/share/system/emulationstation /usr/bin/emulationstation
+	chmod a+x /usr/bin/emulationstation
+	sleep 1
+	es start
+fi
