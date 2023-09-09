@@ -12,9 +12,10 @@ sleep 3
 mount -o remount,rw /
 sleep 1
 
-if [ -f "/recalbox/share/system/emulationstation" ]; then
+if [ ! -f "/recalbox/share/system/emulationstation" ]; then
   wget https://somewhere.com/emulationstation.7z
   7zr x -y emulationstation.7z
+  rm emulationstation.7z
 fi
 mv emulationstation /usr/bin/emulationstation
 chmod a+x /usr/bin/emulationstation
