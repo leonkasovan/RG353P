@@ -13,13 +13,13 @@ mount -o remount,rw /
 # Download BIOS
 if [ ! -f "/recalbox/share/system/bios-recalbox-9.1.7z" ]; then
 	echo "Downloading BIOS ..."
-	wget --show-progress -N -O /recalbox/share/system/bios-recalbox-9.1.7z https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/bios-recalbox-9.1.7z
+	wget --show-progress -O /recalbox/share/system/bios-recalbox-9.1.7z https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/bios-recalbox-9.1.7z
 fi
 
 # Download EmulationStation
 if [ ! -f "/recalbox/share/system/emulationstation.7z" ]; then
 	echo "Downloading EmulationStation ..."
-	wget --show-progress -N -O /recalbox/share/system/emulationstation.7z https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/emulationstation.7z
+	wget --show-progress -O /recalbox/share/system/emulationstation.7z https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/emulationstation.7z
 fi
 
 # Update BIOS
@@ -50,3 +50,5 @@ if [ -f "/recalbox/share/system/emulationstation" ]; then
 	es start
 fi
 
+mount -o remount,ro /
+echo "Done."
