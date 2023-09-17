@@ -28,3 +28,6 @@ Open ssh IP ADDRESS (192.168.1.X) and execute this command:
 ## Apps for RG353P
 Mini File Manager (Enhanced) : https://github.com/leonkasovan/351Files  
 Custom Emulation Station : https://github.com/leonkasovan/batocera-emulationstation
+
+ROM(s):  
+1. https://bda.retroroms.info:82/downloads/FBneo/update/arcade/?C=M&O=D  
