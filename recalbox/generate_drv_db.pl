@@ -209,6 +209,10 @@ foreach my $filename ( @Filelist ) {
 				}
 			}
 
+			# We only want the 1st name
+			$Drivers{$name}[2] =~ /(.*)\\0.*/;
+			$Drivers{$name}[2] = $1;
+
 			if ( $struct =~ /BDF_PROTOTYPE/ ) {
 				$Drivers{$name}[8] = "$Drivers{$name}[8]" . ".Prototype";
 			}
