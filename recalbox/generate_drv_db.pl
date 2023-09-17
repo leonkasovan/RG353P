@@ -6,93 +6,94 @@ my $OutFile = "db_fbneo_games.csv";
 my @Filelist;
 my %Drivers;
 my @Driverlist;
+my $SOURCE_FBNEO_DRIVER = "/mnt/c/Projects/FBNeo/src/burn/drv/";
 
 if (not defined $ARGV[0]) {
 	@ARGV = (
-"/mnt/c/Projects/FBNeo/src/burn/drv/atari",
-"/mnt/c/Projects/FBNeo/src/burn/drv/capcom",
-"/mnt/c/Projects/FBNeo/src/burn/drv/cave",
-# "/mnt/c/Projects/FBNeo/src/burn/drv/channelf",
-# "/mnt/c/Projects/FBNeo/src/burn/drv/coleco",
-"/mnt/c/Projects/FBNeo/src/burn/drv/cps3",
-"/mnt/c/Projects/FBNeo/src/burn/drv/d_parent.cpp",
-"/mnt/c/Projects/FBNeo/src/burn/drv/dataeast",
-"/mnt/c/Projects/FBNeo/src/burn/drv/galaxian",
-"/mnt/c/Projects/FBNeo/src/burn/drv/irem",
-"/mnt/c/Projects/FBNeo/src/burn/drv/konami",
-# "/mnt/c/Projects/FBNeo/src/burn/drv/megadrive",
-"/mnt/c/Projects/FBNeo/src/burn/drv/midway",
-# "/mnt/c/Projects/FBNeo/src/burn/drv/msx",
-"/mnt/c/Projects/FBNeo/src/burn/drv/neogeo",
-# "/mnt/c/Projects/FBNeo/src/burn/drv/nes",
-"/mnt/c/Projects/FBNeo/src/burn/drv/pce",
-"/mnt/c/Projects/FBNeo/src/burn/drv/pgm",
-"/mnt/c/Projects/FBNeo/src/burn/drv/pre90s",
-"/mnt/c/Projects/FBNeo/src/burn/drv/psikyo",
-"/mnt/c/Projects/FBNeo/src/burn/drv/pst90s",
-"/mnt/c/Projects/FBNeo/src/burn/drv/sega",
-# "/mnt/c/Projects/FBNeo/src/burn/drv/sg1000",
-# "/mnt/c/Projects/FBNeo/src/burn/drv/sms",
-"/mnt/c/Projects/FBNeo/src/burn/drv/spectrum",
-"/mnt/c/Projects/FBNeo/src/burn/drv/taito",
-"/mnt/c/Projects/FBNeo/src/burn/drv/toaplan"
+$SOURCE_FBNEO_DRIVER . "atari",
+$SOURCE_FBNEO_DRIVER . "capcom",
+$SOURCE_FBNEO_DRIVER . "cave",
+# $SOURCE_FBNEO_DRIVER . "channelf",
+# $SOURCE_FBNEO_DRIVER . "coleco",
+$SOURCE_FBNEO_DRIVER . "cps3",
+$SOURCE_FBNEO_DRIVER . "d_parent.cpp",
+$SOURCE_FBNEO_DRIVER . "dataeast",
+$SOURCE_FBNEO_DRIVER . "galaxian",
+$SOURCE_FBNEO_DRIVER . "irem",
+$SOURCE_FBNEO_DRIVER . "konami",
+# $SOURCE_FBNEO_DRIVER . "megadrive",
+$SOURCE_FBNEO_DRIVER . "midway",
+# $SOURCE_FBNEO_DRIVER . "msx",
+$SOURCE_FBNEO_DRIVER . "neogeo",
+# $SOURCE_FBNEO_DRIVER . "nes",
+$SOURCE_FBNEO_DRIVER . "pce",
+$SOURCE_FBNEO_DRIVER . "pgm",
+$SOURCE_FBNEO_DRIVER . "pre90s",
+$SOURCE_FBNEO_DRIVER . "psikyo",
+$SOURCE_FBNEO_DRIVER . "pst90s",
+$SOURCE_FBNEO_DRIVER . "sega",
+# $SOURCE_FBNEO_DRIVER . "sg1000",
+# $SOURCE_FBNEO_DRIVER . "sms",
+$SOURCE_FBNEO_DRIVER . "spectrum",
+$SOURCE_FBNEO_DRIVER . "taito",
+$SOURCE_FBNEO_DRIVER . "toaplan"
 );
 	
-	# $ARGV[0] = "/mnt/c/Projects/FBNeo/src/burn/drv/atari";
-	# $ARGV[1] = "/mnt/c/Projects/FBNeo/src/burn/drv/capcom";
-	# $ARGV[2] = "/mnt/c/Projects/FBNeo/src/burn/drv/cave";
-	# $ARGV[3] = "/mnt/c/Projects/FBNeo/src/burn/drv/channelf";
-	# $ARGV[4] = "/mnt/c/Projects/FBNeo/src/burn/drv/coleco";
-	# $ARGV[5] = "/mnt/c/Projects/FBNeo/src/burn/drv/cps3";
-	# $ARGV[6] = "/mnt/c/Projects/FBNeo/src/burn/drv/d_parent.cpp";
-	# $ARGV[7] = "/mnt/c/Projects/FBNeo/src/burn/drv/dataeast";
-	# $ARGV[8] = "/mnt/c/Projects/FBNeo/src/burn/drv/galaxian";
-	# $ARGV[9] = "/mnt/c/Projects/FBNeo/src/burn/drv/irem";
-	# $ARGV[10] = "/mnt/c/Projects/FBNeo/src/burn/drv/konami";
-	# $ARGV[11] = "/mnt/c/Projects/FBNeo/src/burn/drv/megadrive";
-	# $ARGV[12] = "/mnt/c/Projects/FBNeo/src/burn/drv/midway";
-	# $ARGV[13] = "/mnt/c/Projects/FBNeo/src/burn/drv/msx";
-	# $ARGV[14] = "/mnt/c/Projects/FBNeo/src/burn/drv/neogeo";
-	# $ARGV[15] = "/mnt/c/Projects/FBNeo/src/burn/drv/nes";
-	# $ARGV[16] = "/mnt/c/Projects/FBNeo/src/burn/drv/pce";
-	# $ARGV[17] = "/mnt/c/Projects/FBNeo/src/burn/drv/pgm";
-	# $ARGV[18] = "/mnt/c/Projects/FBNeo/src/burn/drv/pre90s";
-	# $ARGV[19] = "/mnt/c/Projects/FBNeo/src/burn/drv/psikyo";
-	# $ARGV[20] = "/mnt/c/Projects/FBNeo/src/burn/drv/pst90s";
-	# $ARGV[21] = "/mnt/c/Projects/FBNeo/src/burn/drv/sega";
-	# $ARGV[22] = "/mnt/c/Projects/FBNeo/src/burn/drv/sg1000";
-	# $ARGV[23] = "/mnt/c/Projects/FBNeo/src/burn/drv/sms";
-	# $ARGV[24] = "/mnt/c/Projects/FBNeo/src/burn/drv/spectrum";
-	# $ARGV[25] = "/mnt/c/Projects/FBNeo/src/burn/drv/taito";
-	# $ARGV[26] = "/mnt/c/Projects/FBNeo/src/burn/drv/toaplan";
+	# $ARGV[0] = $SOURCE_FBNEO_DRIVER . "atari";
+	# $ARGV[1] = $SOURCE_FBNEO_DRIVER . "capcom";
+	# $ARGV[2] = $SOURCE_FBNEO_DRIVER . "cave";
+	# $ARGV[3] = $SOURCE_FBNEO_DRIVER . "channelf";
+	# $ARGV[4] = $SOURCE_FBNEO_DRIVER . "coleco";
+	# $ARGV[5] = $SOURCE_FBNEO_DRIVER . "cps3";
+	# $ARGV[6] = $SOURCE_FBNEO_DRIVER . "d_parent.cpp";
+	# $ARGV[7] = $SOURCE_FBNEO_DRIVER . "dataeast";
+	# $ARGV[8] = $SOURCE_FBNEO_DRIVER . "galaxian";
+	# $ARGV[9] = $SOURCE_FBNEO_DRIVER . "irem";
+	# $ARGV[10] = $SOURCE_FBNEO_DRIVER . "konami";
+	# $ARGV[11] = $SOURCE_FBNEO_DRIVER . "megadrive";
+	# $ARGV[12] = $SOURCE_FBNEO_DRIVER . "midway";
+	# $ARGV[13] = $SOURCE_FBNEO_DRIVER . "msx";
+	# $ARGV[14] = $SOURCE_FBNEO_DRIVER . "neogeo";
+	# $ARGV[15] = $SOURCE_FBNEO_DRIVER . "nes";
+	# $ARGV[16] = $SOURCE_FBNEO_DRIVER . "pce";
+	# $ARGV[17] = $SOURCE_FBNEO_DRIVER . "pgm";
+	# $ARGV[18] = $SOURCE_FBNEO_DRIVER . "pre90s";
+	# $ARGV[19] = $SOURCE_FBNEO_DRIVER . "psikyo";
+	# $ARGV[20] = $SOURCE_FBNEO_DRIVER . "pst90s";
+	# $ARGV[21] = $SOURCE_FBNEO_DRIVER . "sega";
+	# $ARGV[22] = $SOURCE_FBNEO_DRIVER . "sg1000";
+	# $ARGV[23] = $SOURCE_FBNEO_DRIVER . "sms";
+	# $ARGV[24] = $SOURCE_FBNEO_DRIVER . "spectrum";
+	# $ARGV[25] = $SOURCE_FBNEO_DRIVER . "taito";
+	# $ARGV[26] = $SOURCE_FBNEO_DRIVER . "toaplan";
 	
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/atari";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/capcom";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/cave";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/channelf";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/coleco";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/cps3";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/d_parent.cpp";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/dataeast";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/galaxian";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/irem";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/konami";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/megadrive";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/midway";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/msx";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/neogeo";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/nes";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/pce";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/pgm";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/pre90s";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/psikyo";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/pst90s";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/sega";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/sg1000";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/sms";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/spectrum";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/taito";
-	# push $ARGV, "/mnt/c/Projects/FBNeo/src/burn/drv/toaplan";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "atari";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "capcom";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "cave";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "channelf";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "coleco";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "cps3";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "d_parent.cpp";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "dataeast";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "galaxian";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "irem";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "konami";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "megadrive";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "midway";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "msx";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "neogeo";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "nes";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "pce";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "pgm";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "pre90s";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "psikyo";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "pst90s";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "sega";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "sg1000";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "sms";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "spectrum";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "taito";
+	# push $ARGV, $SOURCE_FBNEO_DRIVER . "toaplan";
 }
 
 # Process command line arguments
@@ -208,31 +209,14 @@ foreach my $filename ( @Filelist ) {
 				}
 			}
 
-			# We only want the 1st name
-			$Drivers{$name}[2] =~ /(.*)\\0.*/;
-			$Drivers{$name}[2] = $1;
-
-			$Drivers{$name}[10] = $Drivers{$name}[2];
-			if ( $struct =~ /BDF_PROTOTYPE/ || $struct =~ /BDF_BOOTLEG/ || $Drivers{$name}[3] ne "" ) {
-				$Drivers{$name}[10] = "$Drivers{$name}[10]" . " [";
-			}
 			if ( $struct =~ /BDF_PROTOTYPE/ ) {
-				$Drivers{$name}[10] = "$Drivers{$name}[10]" . "Prototype";
-				if ( $struct =~ /BDF_BOOTLEG/ || $Drivers{$name}[3] ne "" ) {
-					$Drivers{$name}[10] = "$Drivers{$name}[10]" . ", ";
-				}
+				$Drivers{$name}[8] = "$Drivers{$name}[8]" . ".Prototype";
 			}
 			if ( $struct =~ /BDF_BOOTLEG/ ) {
-				$Drivers{$name}[10] = "$Drivers{$name}[10]" . "Bootleg";
-				if ( $Drivers{$name}[3] ne "" ) {
-					$Drivers{$name}[10] = "$Drivers{$name}[10]" . ", ";
-				}
+				$Drivers{$name}[8] = "$Drivers{$name}[8]" . ".Bootleg";
 			}
 			if ( $Drivers{$name}[3] ne "" ) {
-				$Drivers{$name}[10] = "$Drivers{$name}[10]" . "$Drivers{$name}[3]";
-			}
-			if ( $struct =~ /BDF_PROTOTYPE/ || $struct =~ /BDF_BOOTLEG/ || $Drivers{$name}[3] ne "" ) {
-				$Drivers{$name}[10] = "$Drivers{$name}[10]" . "]";
+				$Drivers{$name}[8] = "$Drivers{$name}[8]" . ".$Drivers{$name}[3]";
 			}
 		}
 	}
@@ -242,7 +226,7 @@ foreach my $filename ( @Filelist ) {
 # Sort the list of drivers using the decorated game name as the key
 # Make the sort order more predictive by adding the driver name
 @Driverlist = sort {
-	lc( $Drivers{$a}[10] . $Drivers{$a}[1] ) cmp lc( $Drivers{$b}[10] . $Drivers{$b}[1] );
+	lc( $Drivers{$a}[2] . $Drivers{$a}[1] ) cmp lc( $Drivers{$b}[2] . $Drivers{$b}[1] );
 } keys %Drivers;
 
 if ( $OutFile ) {
@@ -251,17 +235,17 @@ if ( $OutFile ) {
 
 	print "Generating gamelist.txt...\n";
 	print OUTFILE "sep=|\x0d\x0a";
-	print OUTFILE "Status";
+	# print OUTFILE "Status";
 	print OUTFILE "|Name";
 	print OUTFILE "|Full name";
-	print OUTFILE "|Remarks";
+	# print OUTFILE "|Remarks";
 	print OUTFILE "|Company";
 	print OUTFILE "|Hardware";
 	print OUTFILE "|Year of release";
 	print OUTFILE "|Parent";
 	print OUTFILE "|Working Status";
 	# print OUTFILE "|Filename";
-	print OUTFILE "|Extra Full name";
+	# print OUTFILE "|Extra Full name";
 	print OUTFILE "\x0d\x0a";
 
 	my $Text;
@@ -269,17 +253,17 @@ if ( $OutFile ) {
 	foreach my $name ( @Driverlist ) {
 		my $NeededSpaces;
 
-		print OUTFILE "$Drivers{$name}[0]";
+		# print OUTFILE "$Drivers{$name}[0]";
 		print OUTFILE "|$Drivers{$name}[1]";
 		print OUTFILE "|$Drivers{$name}[2]";
-		print OUTFILE "|$Drivers{$name}[3]";
+		# print OUTFILE "|$Drivers{$name}[3]";
 		print OUTFILE "|$Drivers{$name}[4]";
 		print OUTFILE "|$Drivers{$name}[5]";
 		print OUTFILE "|$Drivers{$name}[6]";
 		print OUTFILE "|$Drivers{$name}[7]";
 		print OUTFILE "|$Drivers{$name}[8]";
 		# print OUTFILE "|$Drivers{$name}[9]";
-		print OUTFILE "|$Drivers{$name}[10]";
+		# print OUTFILE "|$Drivers{$name}[10]";
 		print OUTFILE "\x0d\x0a";
 	}
 
