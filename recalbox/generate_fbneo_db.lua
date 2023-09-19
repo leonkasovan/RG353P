@@ -32,19 +32,34 @@ end
 
 function extract_from_source_code(file)
 	local content = load_file(file)
-	local regex = pcre.new('\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0),\\s*(L".*"|NULL|0)\\s*,\\s*(L".*"|NULL|0)\\s*,\\s*(L".*"|NULL|0)\\s*,\\s*(L".*"|NULL)\\s*,\\s*(\\d|[^,]*)')
 	
 	if content == nil then
 		return nil
 	end
 	
-	-- print(regex:match(content))
-	
 	for v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14 in pcre.gmatch(content,'\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0)\\s*,\\s*(".*"|NULL|0),\\s*(L".*"|NULL|0)\\s*,\\s*(L".*"|NULL|0)\\s*,\\s*(L".*"|NULL|0)\\s*,\\s*(L".*"|NULL)\\s*,\\s*(\\d|[^,]*)') do 
-		print(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14)
+		-- print(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14)
+		if (v14 ~= "NULL") then print(v1,v14) end
 	end
+	
+	-- v1_ShortName
+	-- v2_Parent
+	-- v3_BIOS
+	-- v4
+	-- v5_Year
+	-- v6_FullName
+	-- v7_Remarks
+	-- v8_Company
+	-- v9_Hardware
+	-- v10_FullNameinUnicode
+	-- v11
+	-- v12
+	-- v13
+	-- v14_GameStatus
+	
 	
 	return {}
 end
 extract_from_source_code('src/burn/drv/taito/d_bublbobl.cpp')
 extract_from_source_code('src/burn/drv/capcom/d_cps2.cpp')
+extract_from_source_code('src/burn/drv/pgm/d_pgm.cpp')
