@@ -14,5 +14,5 @@ PATH=${HOME}/sysroot/bin:${HOME}/sysroot/usr/bin PKG_CONFIG_SYSROOT_DIR=${HOME}/
 -DOPTION_RECALBOX_PRODUCTION_BUILD=true \
 -DBUILD_SHARED_LIBS=ON \
 -DUSE_KMSDRM=ON
-# PATH=${HOME}/sysroot/bin:${HOME}/sysroot/usr/bin PKG_CONFIG_SYSROOT_DIR=${HOME}/sysroot PKG_CONFIG_LIBDIR=${HOME}/sysroot/usr/lib/pkgconfig ${HOME}/sysroot/usr/bin/make VERBOSE=1 -j8
-PATH=${HOME}/sysroot/bin:${HOME}/sysroot/usr/bin ${HOME}/sysroot/usr/bin/make VERBOSE=1 -j8
+# PATH=${HOME}/sysroot/bin:${HOME}/sysroot/usr/bin ${HOME}/sysroot/usr/bin/make VERBOSE=1 -j8
+PATH=${HOME}/sysroot/bin:${HOME}/sysroot/usr/bin ${HOME}/sysroot/usr/bin/make -j8
