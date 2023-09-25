@@ -1,7 +1,7 @@
 cd ~
 7zr x recalbox-emulationstation-project.7z
 rm recalbox-emulationstation-project.7z
-cd project/frontend
+cd projects/frontend
 
 cat > build.sh <<EOF
 #!/bin/bash
