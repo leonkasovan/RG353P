@@ -1,3 +1,14 @@
+#DEBIAN:
+#cp -a /usr/lib/x86_64-linux-gnu/libmpc.so* /mnt/d/
+#cp -a /usr/lib/x86_64-linux-gnu/libisl.so* /mnt/d/
+#cp 7zr 
+#cp 7zr 
+#cp pkg-config
+
+#UBUNTU:
+#sudo cp -a /mnt/d/libmpc.so* /usr/lib/x86_64-linux-gnu/
+#sudo cp -a /mnt/d/libisl.so* /usr/lib/x86_64-linux-gnu/
+
 cd /home/ark/recalbox-rpi4_64/output/host/aarch64-buildroot-linux-gnu/sysroot/
 mkdir -p usr/bin2 bin2 usr/libexec
 cp -a ../../share/cmake-3.22 usr/share
