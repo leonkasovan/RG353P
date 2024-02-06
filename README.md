@@ -9,7 +9,8 @@ Interface: KMS/DRM + EmulationStation
 OS:
 1. Stock OS (Batocera rip): https://win.anbernic.com/download/233.html  
 2. JELOS: https://github.com/JustEnoughLinuxOS/distribution
-3. Ark OS: https://github.com/christianhaitian/arkos/wiki  
+3. Ark OS: https://github.com/christianhaitian/arkos/wiki
+4. Recalbox: https://www.recalbox.com/download/  
 
 Full BIOS for Batocera 37:  
 http://theminicaketv.free.fr/bios.html  
