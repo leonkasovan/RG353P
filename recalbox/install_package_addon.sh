@@ -7,6 +7,10 @@ if [ -d /recalbox/share/roms/addon/filecommander ]; then
     rm -r /recalbox/share/roms/addon/filecommander
 fi
 
+if [ -e recalbox-package-addon.7z ]; then
+    rm recalbox-package-addon.7z
+fi
+
 wget https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/recalbox-package-addon.7z
 7zr x -aoa -sdel recalbox-package-addon.7z
 echo "============================"
