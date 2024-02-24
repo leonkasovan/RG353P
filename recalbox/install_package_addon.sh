@@ -18,6 +18,9 @@ echo "Installing Terminal..."
 mv addon/st /usr/bin/
 chmod a+x /usr/bin/st
 
+echo "Updating Addon SystemList..."
+mv addon/systemlist.xml /recalbox/share/system/.emulationstation/
+
 echo "Install SDL1.2 compatibility layer"
 mv addon/libSDL-1.2.so.1.2.69 /usr/lib/
 cd /usr/lib/
@@ -26,5 +29,3 @@ rm libSDL-1.2.so.0
 ln -s libSDL-1.2.so.1.2.69 libSDL.so
 ln -s libSDL-1.2.so.1.2.69 libSDL-1.2.so.0
 
-echo "Updating Addon SystemList..."
-mv addon/systemlist.xml /recalbox/share/system/.emulationstation/
