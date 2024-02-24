@@ -12,7 +12,8 @@ if [ -e recalbox-package-addon.7z ]; then
 fi
 
 wget https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/recalbox-package-addon.7z
-7zr x -aoa -sdel recalbox-package-addon.7z
+7zr x -aoa recalbox-package-addon.7z
+rm recalbox-package-addon.7z
 echo "============================"
 
 echo "Updating Addon SystemList..."
