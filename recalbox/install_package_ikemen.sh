@@ -6,7 +6,7 @@ if [ -e recalbox-package-ikemen.7z ]; then
 fi
 
 wget https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/recalbox-package-ikemen.7z
-7zr x recalbox-package-ikemen.7z
+7zr x -aoa recalbox-package-ikemen.7z
 rm recalbox-package-ikemen.7z
 echo "============================"
 echo "Updating Ikemen SystemList..."
