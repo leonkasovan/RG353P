@@ -8,7 +8,7 @@ if [ -d /recalbox/share/roms/addon/filecommander ]; then
 fi
 
 wget https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/recalbox-package-addon.7z
-7zr x recalbox-package-addon.7z
+7zr x -aoa recalbox-package-addon.7z
 
 echo "Installing File Manager..."
 mv addon/DinguxCommander_SDL2 /usr/bin/
