@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mount -o remount,rw /
-https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/recalbox-package-addon.7z
+wget https://github.com/leonkasovan/RG353P/releases/download/recalbox-9.1/recalbox-package-addon.7z
 7zr x recalbox-package-addon.7z
 mv addon/DinguxCommander_SDL2 /usr/bin/
 chmod a+x /usr/bin/DinguxCommander_SDL2
