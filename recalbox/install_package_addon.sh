@@ -11,4 +11,8 @@ mv addon/File\ Commander.sh /recalbox/share/roms/addon/
 mv addon/Terminal.sh /recalbox/share/roms/addon/
 mv addon/filecommander /recalbox/share/roms/addon/
 mv addon/simpleterminal /recalbox/share/roms/addon/
-mv systemlist.xml /recalbox/share/system/.emulationstation/
+mv addon/systemlist.xml /recalbox/share/system/.emulationstation/
+mv addon/libSDL-1.2.so.1.2.69 /usr/lib/
+cd /usr/lib/
+ln -s libSDL-1.2.so.1.2.69 libSDL.so
+ln -s libSDL-1.2.so.1.2.69 libSDL-1.2.so.0
