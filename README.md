@@ -13,6 +13,9 @@ OS:
 4. Recalbox: https://www.recalbox.com/download/  
 https://github.com/leonkasovan/RG353P/wiki/Recalbox
 
+Recalbox Toolchain:
+https://github.com/leonkasovan/RG353P/releases/tag/v1.0
+
 Full BIOS for Batocera 37:  
 http://theminicaketv.free.fr/bios.html  
 https://github.com/Abdess/retroarch_system  
