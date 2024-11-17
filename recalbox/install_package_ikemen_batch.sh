@@ -15,5 +15,5 @@ mv ikemen/systemlist.xml /recalbox/share/system/.emulationstation/
 echo "1. Installing Ikemen-Go Engine..."
 mv ikemen/Ikemen_Go_RG353P_Batch /usr/bin/
 chmod a+x /usr/bin/Ikemen_Go_RG353P_Batch
-cd default
-Ikemen_GO_Linux_RG353P_Batch -install
+cd ikemen/default
+Ikemen_Go_RG353P_Batch -install
